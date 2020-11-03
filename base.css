@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    font-family: "Roboto Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 200;
+    font-family: "Open Sans", Roboto, Calibri, Helvetica, Arial, sans-serif;
     font-size: 18px;
 }
 
@@ -15,8 +16,7 @@ nav {
 }
 
 footer {
-    width: 100%;
-    padding-left: 50px;
+    padding-left: 10%;
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
@@ -24,6 +24,35 @@ footer {
     background-color: lightgray;
 }
 
-#container {
-    padding-top: 80px;
+article {
+    width: 80%;
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 300px;
+    padding-left: 10%;
 }
+
+figure {
+    float: right;
+    margin: 0 0 15px 15px;
+    width: 30%;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+h1 {
+    padding-left: 10%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400;
+    font-family: "Open Sans", Roboto, Calibri, Helvetica, Arial, sans-serif;
+}
+
+strong {
+    font-weight: 400;
+    font-family: "Open Sans", Roboto, Calibri, Helvetica, Araial, sans-serif;
+}
+
