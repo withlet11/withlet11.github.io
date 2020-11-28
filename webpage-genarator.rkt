@@ -39,7 +39,7 @@
     (author-email "withlet11@gmail.com")
     (filename "index")
     (logo-path "withlet11_full_logo.png")
-    (figure-path "skyclock_screenshot02.png")
+    (figure-path "skyclock_screenshot01.jpg")
     (apps
      ((filename "skyclock")
       (app-name "Sky Clock")
@@ -84,7 +84,7 @@
     (author-email "withlet11@gmail.com")
     (filename "skyclock")
     (logo-path "withlet11_full_logo.png")
-    (figure-path "skyclock_screenshot02.png")
+    (figure-path "skyclock_screenshot01.jpg")
     (introduction
      (en
       "This is a clock application with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres.")
@@ -187,7 +187,7 @@
      ((en "User data collection"
 	  "We do not collect any user information including: names, phone numbers, e-mail addresses and passwords. However, we use 3rd party ad service (Google AdMob™) in this app, and that service may collect your information. The privacy policy can be read on the following page: <a href=\"https://policies.google.com/privacy\">Google privacy policy</a>")
       (ja "ユーザのデータの収集"
-	  "本アプリの開発元は個人情報を収集しません。ただし、サードパーティの広告サービス (Google AdMob™)を利用しており、そのサービスが個人情報を収集することがあります。そのプライバシポリシーにつきましては、<a href=\"https://policies.google.com/privacy\">Google privacy polcy</a>でご確認下さい。"))
+	  "本アプリの開発元は個人情報を収集しません。ただし、サードパーティの広告サービス（Google AdMob™）を利用しており、そのサービスが個人情報を収集することがあります。そのプライバシポリシーにつきましては、<a href=\"https://policies.google.com/privacy\">Google privacy polcy</a>でご確認下さい。"))
      ((en "Additional permissions"
 	  "This application accesses your geo-location information, only if you permit. That data is stored at your device only, and never provided to any other applications or services.
 Internet is used to display advertisement banners.")
@@ -205,7 +205,7 @@ Internet is used to display advertisement banners.")
      ((en "Contact Us"
 	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>")
       (ja "お問い合わせ"
-	  "プライバシポリシーに付きましてご質問がある場合は<a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>にお問い合わせ下さい。")))))
+	  "プライバシポリシーにつきましてご質問がある場合は<a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>にお問い合わせ下さい。")))))
     
 (define (skyclock-html-generator lang content-data)
   (let ([subtitle (second (assv 'subtitle content-data))])
