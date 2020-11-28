@@ -39,7 +39,7 @@
     (author-email "withlet11@gmail.com")
     (filename "index")
     (logo-path "withlet11_full_logo.png")
-    (figure-path "skyclock_screenshot01.jpg")
+    (figure-path "skyclock_screenshot01.png")
     (apps
      ((filename "skyclock")
       (app-name "Sky Clock")
@@ -84,7 +84,7 @@
     (author-email "withlet11@gmail.com")
     (filename "skyclock")
     (logo-path "withlet11_full_logo.png")
-    (figure-path "skyclock_screenshot01.jpg")
+    (figure-path "skyclock_screenshot01.png")
     (introduction
      (en
       "This is a clock application with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres.")
