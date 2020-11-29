@@ -59,6 +59,10 @@ h2,h3,h4,h5,h6 {
     font-family: "Noto Sans CJK JP", sans-serif;
 }
 
+h3 {
+    margin-top: 3em;
+}
+	
 h4 {
     text-decoration: underline;
 }

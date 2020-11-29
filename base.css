@@ -58,6 +58,10 @@ h2,h3,h4,h5,h6 {
     font-family: "Open Sans", Roboto, Calibri, Helvetica, Arial, sans-serif;
 }
 
+h3 {
+    margin-top: 3em;
+}
+		    
 h4 {
     font-style: italic
 }

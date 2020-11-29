@@ -28,6 +28,8 @@
 ;; Data and Generator for index pages                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(require gregor)
+
 (define language-list '(en ja))
 
 (define index-data
@@ -78,7 +80,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define skyclock-data
-  '((page-title "Sky Clock")
+  `((page-title "Sky Clock")
     (subtitle "Sky Clock")
     (author-name "Yasuhiro Yamakawa")
     (author-email "withlet11@gmail.com")
@@ -143,9 +145,9 @@
       (ja "ウィジェット"
 	  "ウィジェットが利用できます。"))
      ((en "10-sec ad"
-	  "An ad banner is displayed for 10 seconds after lauching the app. No ads are displayed after 10 seconds."
+	  "An ad banner is displayed for 10 seconds after launching the app. No ads are displayed after 10 seconds.")
       (ja "10秒広告"
-	  "起動後の最初の10秒だけ広告が表示されます。その後は広告は表示されません。"))))
+	  "起動後の最初の10秒だけ広告が表示されます。その後は広告は表示されません。")))
     (usage
      ((en "Usage")
       (ja "使い方"))
@@ -154,7 +156,7 @@
       (ja "北天と南天の切り替え"
 	  "ツールバーのスイッチをタップします。ウィジョットには、アプリにおいて現在表示中もしくは最後に表示されていたものが表示されます。"))
      ((en "To switch zoom in/out"
-	  "Double tap on the screen.")
+	  "Double tap the screen.")
       (ja "ズームイン・アウト"
 	  "画面をダブルタップします。"))
      ((en "To adjust the position of clock"
@@ -177,11 +179,37 @@
 	  "Swipe the ring of date")
       (ja "太陽と星を動かす"
 	  "日付リングをスワイプします。")))
+    (update-history
+     ((en "Update History")
+      (ja "更新履歴"))
+     ("7 (4.1)"
+      ,(moment 2020 11 29 7 59 #:tz "Europe/Budapest")
+      ((en "Fixed a location service request issue and a decimal point issue (comma not accepted but displayed).")
+       (ja "位置情報サービスリクエストの問題と小数点の問題（小数点にカンマが用いられる地域で発生）を解決しました。")))
+     ("6 (4.0)"
+      ,(moment 2020 11 28 14 14 #:tz "Europe/Budapest")
+      ((en "An ad banner has been added. The shape of clock hands has been changed.")
+       (ja "広告バナーが追加されました。時計の針の形が新しくなりました。")))
+     ("5 (3.0)"
+      ,(moment 2020 11 20 21 22 #:tz "Europe/Budapest")
+      ((en "App widget is available.")
+       (ja "ウィジェットが利用可能になりました。")))
+     ("3 (2.1)"
+      ,(moment 2020 11 12 23 00 #:tz "Europe/Budapest")
+      ((en "Fixed a bug (Clock base panel didn't update after displaying clock hands panel again)")
+       (ja "不具合の修正（時計の針の再表示後にベースパネルの更新がなかった）")))
+     ("2 (2.0)"
+      ,(moment 2020 11 11 21 36 #:tz "Europe/Budapest")
+      ((en "Planisphere mode was added.")
+       (ja "星座早見盤モードを追加しました。")))
+     ("1 (1.0)"
+      ,(moment 2020 11 04 22 13 #:tz "Europe/Budapest")
+      ((en "This is the first release.")
+       (ja "最初のリリースです。"))))
     (privacy-policy
      ((en "Privacy Policy")
       (ja "プライバシポリシー"))
-     ((en "Last updated on 20 Nov 2020")
-      (ja "最終更新：2020-11-20"))
+     ,(moment 2020 11 20 #:tz "Europe/Budapest")
      ((en "In order to clarify what we do on this matter and how the information provided by the users are used is described in this privacy policy.")
       (ja "本アプリのご利用に当たりまして、このプライバシポリシーにて個人情報の扱いをご確認下さい。"))
      ((en "User data collection"
@@ -229,6 +257,9 @@ Internet is used to display advertisement banners.")
      (make-section-usage lang content-data)
      "      </section>\n"
      "      <section>\n"
+     (make-section-update-history lang content-data)
+     "      </section>\n"
+     "      <section>\n"
      (make-section-privacy-policy lang content-data)
      "      </section>\n"
      "    </article>\n")))
@@ -258,50 +289,78 @@ Internet is used to display advertisement banners.")
      "        <p>" (first (get-local-text lang (second content))) " [<a href=\"http://opensource.org/licenses/mit-license.php\">http://opensource.org/licenses/mit-license.php</a>]</p>\n")))
 
 (define (make-section-features lang content-data)
-  (let ([content (cdr (assv 'features content-data))]
-	[delimiter (get-delimiter lang)])
-    (string-append
-     "        <h3>" (first (get-local-text lang (first content))) "</h3>\n"
-     "        <ul>\n"
-     (apply string-append
-	    (map (lambda (x)
-		   (let ([local-text (get-local-text lang x)])
-		     (string-append "          <li><strong>"
-				    (first local-text)
-				    delimiter
-				    "</strong>"
-				    (second local-text)
-				    "</li>\n")))
-		 (cdr content)))
-     "        </ul>\n")))
+  (let* ([content (cdr (assv 'features content-data))]
+	 [delimiter (get-delimiter lang)]
+	 [head-part `("        <h3>"
+		      ,(first (get-local-text lang (first content)))
+		      "</h3>\n"
+		      "        <ul>\n")])
+    (apply
+     string-append
+     `(,@(foldl (lambda (x result)
+		  (let ([local-text (get-local-text lang x)])
+		    `(,@result
+		      "          <li><strong>"
+		      ,(first local-text)
+		      ,delimiter
+		      "</strong>"
+		      ,(second local-text)
+		      "</li>\n")))
+		head-part
+		(cdr content))
+       "        </ul>\n"))))
 
 (define (make-section-usage lang content-data)
-  (let ([content (cdr (assv 'usage content-data))])
-    (string-append
-     "        <h3>" (first (get-local-text lang (first content))) "</h3>\n"
-     (apply string-append
-	    (map (lambda (x)
-		   (let ([local-text (get-local-text lang x)])
-		     (string-append "        <h4>" (first local-text) "</h4>\n"
-				    "        <p>" (second local-text) "</p>\n")))
-		 (cdr content))))))
+  (let* ([content (cdr (assv 'usage content-data))]
+	 [head-part `("        <h3>"
+		      ,(first (get-local-text lang (first content)))
+		      "</h3>\n")])
+    (apply
+     string-append
+     (foldl (lambda (x result)
+	      (let ([local-text (get-local-text lang x)])
+		`(,@result
+		  "        <h4>" ,(first local-text) "</h4>\n"
+		  "        <p>" ,(second local-text) "</p>\n")))
+	    head-part
+	    (cdr content)))))
+	
+(define (make-section-update-history lang content-data)
+  (let* ([content (cdr (assv 'update-history content-data))]
+	 [head-part `("        <h3>"
+		      ,(first (get-local-text lang (first content)))
+		      "</h3>\n")])
+    (apply
+     string-append
+     (foldl (lambda (x result)
+	      `(,@result
+		"        <h4>" ,(first x) "</h4>\n" ;; version
+		"        <p>"
+		,(get-local-date-time-string lang (second x))
+		"</p>\n" ;; date and time
+		"        <p>" ,(first (get-local-text lang (third x))) "</p>\n"))
+	    head-part
+	    (cdr content)))))
 	
 (define (make-section-privacy-policy lang content-data)
-  (let ([content (cdr (assv 'privacy-policy content-data))])
-    (string-append
-     "        <h3 id=\"privacy_policy\">"
-     (first (get-local-text lang (first content)))
-     "</h3>\n"
-     "        <p>" (first (get-local-text lang (second content))) "</p>\n"
-     "        <p>" (first (get-local-text lang (third content))) "</p>\n"
-     (apply string-append
-	    (map (lambda (x)
-		   (string-append "          <h4>"
-				  (first (get-local-text lang x))
-				  "</h4>\n"
-				  "          <p>"
-				  (second (get-local-text lang x))))
-		 (cdddr content))))))
+  (let* ([content (cdr (assv 'privacy-policy content-data))]
+	 [head-part `("        <h3 id=\"privacy_policy\">"
+		      ,(first (get-local-text lang (first content)))
+		      "</h3>\n"
+		      "        <p>" ,(get-last-update-string lang (second content)) "</p>\n"
+		      "        <p>" ,(first (get-local-text lang (third content))) "</p>\n")])
+    (apply
+     string-append
+     (foldl (lambda (x result)
+	      `(,@result
+		"          <h4>"
+		,(first (get-local-text lang x))
+		"</h4>\n"
+		"          <p>"
+		,(second (get-local-text lang x))
+		"</p>\n"))
+	    head-part
+	    (cdddr content)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Generator for common part                                  ;;
@@ -383,6 +442,14 @@ Internet is used to display advertisement banners.")
     (cond [(assv lang delimiters) => second]
 	  [else (cadar delimiters)])))
 
+(define (get-local-date-time-string lang date-time)
+  (cond [(eqv? lang 'ja) (string-append (~t date-time "y年M月d日) h時mm分") " (CET)")]
+	[else (string-append (~t date-time "d MMM y h:mm") " (CET)")]))
+
+(define (get-last-update-string lang date-time)
+  (cond [(eqv? lang 'ja) (string-append "最終更新：" (~t date-time "y年M月d日"))]
+	[else (string-append "Last update on " (~t date-time "d MMM y"))]))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Generate pages                                             ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -399,6 +466,51 @@ Internet is used to display advertisement banners.")
 	  `((,skyclock-data ,skyclock-html-generator)
 	    (,index-data ,index-html-generator)))
 	    
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Generate README.md                                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(define (make-readme-md lang content-data)
+  (let ([introduction (cdr (assv 'introduction content-data))]
+	[requirement (caddr (assv 'requirement content-data))]
+	[features (cddr (assv 'features content-data))]
+	[usage (cddr (assv 'usage content-data))])
+    (string-append
+     "# Sky Clock\n"
+     (first (get-local-text lang introduction))
+     "\n\n"
+     "## Requirement\n"
+     (first (get-local-text lang requirement))
+     "\n\n"
+     "## Features\n"
+     (apply string-append
+	   (map (lambda (x)
+		  (string-append
+		   "* **"
+		   (first (get-local-text lang x))
+		   ":** "
+		   (second (get-local-text lang x))
+		   "\n"))
+		features))
+     "\n\n"
+     "## Usage\n\n"
+     (apply string-append
+	   (map (lambda (x)
+		  (string-append
+		   "### "
+		   (first (get-local-text lang x))
+		   "\n* "
+		   (second (get-local-text lang x))
+		   "\n\n"))
+		usage)))))
+	
+(call-with-output-file "README.md"
+  (lambda (out)
+    (for-each (lambda (lang)
+		(display (make-readme-md lang skyclock-data) out))
+	      '(en)))
+  #:exists 'replace)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Generate text for Google Play                              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
