@@ -1,30 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel='icon' type='image/x-icon' href='favicon.ico'>
+    <link rel='stylesheet' type='text/css' href='base.css'>
     <title>WITHLET11</title>
   </head>
   <body>
-    <nav>
-      <h1><a href="index.html"><img src="withlet11_full_logo.png" width="240" alt="Withlet11"></a></h1>
-      <p><span class="selected">EN</span> | <a href="index-ja.html">JP</a></p>
-    </nav>
-    <article id="container">
+    <header>
+      <h1><a href='index.html'><img src='withlet11_full_logo.png' width='240' alt='Withlet11'></a></h1>
+      <p><span class='selected'>EN</span> | <a href='index-ja.html'>JP</a></p>
+    </header>
+    <section class='top-item'>
       <h2>Android apps</h2>
-      <section>
-        <h3><a href="skyclock.html">Sky Clock</a></h3>
-        <p>This is a clock application with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres.</p>
-        <p><a href='https://play.google.com/store/apps/details?id=io.github.withlet11.skyclock&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a></p>
-        <img src="skyclock_view.png" width="480" height="480" alt="skyclock view">
-        <h3><a href="skyclocklite.html">Sky Clock lite</a></h3>
-        <p>This is a clock app widget with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres. This app has no ads, but you cannot choose the date and time of observation.</p>
-        <p><a href='https://play.google.com/store/apps/details?id=io.github.withlet11.skyclock&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a></p>
-        <img src="skyclocklite_view.png" width="240" height="520" alt="skyclock view">
-      </section>
-    </article>
+      <article><a class='box-link' href='skyclock.html'>
+        <div class='col'><img src='skyclock_view.png' width='312' height='312' alt='skyclock view'></div>
+        <div class='description'><h3>Sky Clock</h3>
+          <p>This is a clock application with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres.</p>
+        </div></a>
+      </article>
+      <article><a class='box-link' href='skyclocklite.html'>
+        <div class='col'><img src='skyclocklite_view.png' width='144' height='312' alt='skyclock view'></div>
+        <div class='description'><h3>Sky Clock lite</h3>
+          <p>This is a clock app widget with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres. This app has no ads, but you cannot choose the date and time of observation.</p>
+        </div></a>
+      </article>
+      <article><a class='box-link' href='celestialpositions.html'>
+        <div class='col'><img src='celestialpositions_screenshot01.png' width='144' height='312' alt='skyclock view'></div>
+        <div class='description'><h3>Celestial Positions</h3>
+          <p>This is a application that shows the current position list of Messier&apos;s objects and bright stars at your location. It is useful for pointing an uncomputerized telescope at Messier&apos;s objects.</p>
+        </div></a>
+      </article>
+      <article><a class='box-link' href='digitalquadrant.html'>
+        <div class='col'><img src='digitalquadrant_screenshot01.png' width='144' height='312' alt='skyclock view'></div>
+        <div class='description'><h3>Digital Quadrant</h3>
+          <p>This is an astronomical quadrant application for measuring the altitude of celestial objects above the horizon. It has 2 modes, cameraless-mode and camera-mode. Don&apos;t use camera-mode for measuring the alitude of the Sun. The camera of the phone may be damaged.</p>
+        </div></a>
+      </article>
+    </section>
     <footer>
-      <p>Copyright 2020 Yasuhiro Yamakawa &lt;<a href="mailto:withlet11@gmail.com">withlet11@gmail.com</a>&gt;</p>
+      <p>Copyright 2020-2021 Yasuhiro Yamakawa &lt;<a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>&gt;</p>
     </footer>
   </body>
 </html>

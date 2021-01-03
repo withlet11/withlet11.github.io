@@ -1,6 +1,6 @@
 #lang racket
 
-;;; readme-generator.rkt -- generate README documents
+;;; readme-generator.rkt -- generate text for Google Play
 ;;
 ;; The MIT License (MIT)
 ;;
@@ -26,31 +26,18 @@
 
 (require "generator-common.rkt")
 
-(provide make-readme-md)
+(provide make-text-for-google-play)
 
-(define (make-readme-md lang content-data)
-  (let ([app-name (second (assv 'page-title content-data))]
-	[introduction (cdr (assv 'introduction content-data))]
-	[requirement (caddr (assv 'requirement content-data))]
-	[features (cddr (assv 'features content-data))]
-	[usage (cddr (assv 'usage content-data))])
+(define (make-text-for-google-play lang content-data)
+  (let ([introduction (cdr (assv 'introduction content-data))]
+        [features (cddr (assv 'features content-data))])
     (apply
      string-append
-     `(,(format "# ~a\n" app-name)
-       ,(format "~a\n\n" (first (get-local-text lang introduction)))
-       "## Requirement\n"
-       ,(format "~a\n\n" (first (get-local-text lang requirement)))
-       "## Features\n"
-       ,@(map (lambda (x)
-                (format "* **~a:** ~a\n"
-                        (first (get-local-text lang x))
-                        (second (get-local-text lang x))))
-              features)
-       "\n\n"
-       "## Usage\n\n"
-       ,@(flatten
-          (map (lambda (x)
-                 `(,(format "### ~a\n" (first (get-local-text lang x)))
-                   ,(format "* ~a\n\n" (second (get-local-text lang x)))))
-                usage))))))
-	
+     `(,(format "~a\n\n" (first (get-local-text lang introduction)))
+       ,@(flatten (map (lambda (x)
+                         `(,(format "~a~a\n"
+                                    (first (get-local-text lang x))
+                                    (get-delimiter lang))
+                           ,(format "~a\n\n"
+                                    (second (get-local-text lang x)))))
+                       features))))))

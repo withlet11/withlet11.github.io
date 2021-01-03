@@ -26,24 +26,28 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Data and Generator for index pages                         ;;
+;; How to add new contents                                    ;;
+;; 1. Create 'content-of-***.rkt'                             ;;
+;; 2. Create directory with name '***'                        ;;
+;; 3. Add filenames to '(require ...)'                        ;;
+;; 4. Add parameters to 'content-list'                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require gregor
          "generator-common.rkt"
          "html-generator.rkt"
          "readme-generator.rkt"
-         "content-of-index.rkt"
+         "gp-text-generator.rkt"
 	 "content-of-skyclock.rkt"
-	 "content-of-skyclocklite.rkt")
+	 "content-of-skyclocklite.rkt"
+	 "content-of-celestialpositions.rkt"
+	 "content-of-digitalquadrant.rkt"
+         "content-of-index.rkt")
 
-(define html-page-list
-  `((,skyclock-data ,app-page-html-generator)
-    (,skyclocklite-data ,app-page-html-generator)
-    (,index-data ,index-html-generator)))
-
-(define readme-list
-  `((,skyclock-data "skyclock")
-    (,skyclocklite-data "skyclocklite")))
+(define content-list `(,skyclock-data
+                       ,skyclocklite-data
+                       ,celestialpositions-data
+                       ,digitalquadrant-data))
 
 (define language-list '(en ja))
 
@@ -51,67 +55,51 @@
 ;; Generate HTML pages                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(for-each (lambda (data-and-generator)
-            (let ([data (first data-and-generator)]
-                  [generator (second data-and-generator)])
-              (for-each (lambda (lang)
-                          (call-with-output-file (make-filename lang data)
-                            (lambda (out)
-                              (display (make-page lang data generator) out))
-                            #:exists 'replace))
-                        language-list)))
-          html-page-list)
+(for-each (lambda (param)
+            (for-each (lambda (lang)
+                        (call-with-output-file (make-filename lang param)
+                          (lambda (out)
+                            (display (make-app-page lang param) out))
+                          #:exists 'replace))
+                      language-list))
+          content-list)
             
+(let ([data index-data]
+      [content-list content-list])
+  (for-each (lambda (lang)
+              (call-with-output-file (make-filename lang data)
+                (lambda (out)
+                  (display (make-index-page lang data content-list) out))
+                #:exists 'replace))
+            language-list))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Generate README.md                                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(for-each (lambda (params)
-       (call-with-output-file (string-append (second params) "/README.md")
+(for-each (lambda (param)
+       (call-with-output-file (string-append
+                               (make-directory-name param)
+                               "/README.md")
          (lambda (out)
            (for-each (lambda (lang)
-                       (display (make-readme-md lang (first params)) out))
+                       (display (make-readme-md lang param) out))
                      '(en)))
          #:exists 'replace))
-     readme-list)
-
-#;(call-with-output-file "skyclocklite/README.md"
-  (lambda (out)
-    (for-each (lambda (lang)
-		(display (make-readme-md lang skyclocklite-data) out))
-	      '(en)))
-  #:exists 'replace)
+     content-list)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Generate text for Google Play                              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(define (make-text-for-google-play lang content-data)
-  (let ([introduction (cdr (assv 'introduction content-data))]
-	[features (cddr (assv 'features content-data))])
-    (string-append
-     (first (get-local-text lang introduction))
-     "\n\n"
-     (apply string-append
-	   (map (lambda (x)
-		  (string-append
-		   (first (get-local-text lang x))
-		   (get-delimiter lang)
-		   "\n"
-		   (second (get-local-text lang x))
-		   "\n\n"))
-		features)))))
-
-(call-with-output-file "skyclock/text_for_google_play.txt"
-  (lambda (out)
-    (for-each (lambda (lang)
-		(display (make-text-for-google-play lang skyclock-data) out))
-	      '(en ja)))
-  #:exists 'replace)
-
-(call-with-output-file "skyclocklite/text_for_google_play.txt"
-  (lambda (out)
-    (for-each (lambda (lang)
-		(display (make-text-for-google-play lang skyclocklite-data) out))
-	      '(en ja)))
-  #:exists 'replace)
+(for-each (lambda (param)
+            (call-with-output-file (string-append
+                                    (make-directory-name param)
+                                    "/text_for_google_play.txt")
+              (lambda (out)
+                (for-each (lambda (lang)
+                            (display (make-text-for-google-play lang param)
+                                     out))
+                          '(en ja)))
+              #:exists 'replace))
+          content-list)

@@ -15,12 +15,16 @@
     (author-email "withlet11@gmail.com")
     (filename "skyclock")
     (logo-path "withlet11_full_logo.png")
-    (figure-path "skyclock_screenshot01.png")
+    (preview-image "skyclock_view.png" "312" "312")
+    (screenshots ("skyclock_screenshot01.png" "144" "312")
+                 ("skyclock_screenshot03.png" "144" "312")
+                 ("skyclock_screenshot04.png" "144" "312"))
+    (badge "<a href='https://play.google.com/store/apps/details?id=io.github.withlet11.skyclock&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a>")
     (introduction
      (en
       "This is a clock application with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres.")
      (ja
-      "これはAndroid用の星座早見盤付き時計アプリです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。"))
+      "Android用の星座早見盤付き時計アプリです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。"))
     (requirement
      ((en "Requirement")
       (ja "システム要件"))
@@ -154,9 +158,9 @@
      ((en "In order to clarify what we do on this matter and how the information provided by the users are used is described in this privacy policy.")
       (ja "本アプリのご利用に当たりまして、このプライバシポリシーにて個人情報の扱いをご確認下さい。"))
      ((en "User data collection"
-	  "We do not collect any user information including: names, phone numbers, e-mail addresses and passwords. However, we use 3rd party ad service (Google AdMob™) in this app, and that service may collect your information. The privacy policy can be read on the following page: <a href=\"https://policies.google.com/privacy\">Google privacy policy</a>")
+	  "We do not collect any user information including: names, phone numbers, e-mail addresses and passwords. However, we use 3rd party ad service (Google AdMob™) in this app, and that service may collect your information. The privacy policy can be read on the following page: <a href='https://policies.google.com/privacy'>Google privacy policy</a>")
       (ja "ユーザのデータの収集"
-	  "本アプリの開発元は個人情報を収集しません。ただし、サードパーティの広告サービス（Google AdMob™）を利用しており、そのサービスが個人情報を収集することがあります。そのプライバシポリシーにつきましては、<a href=\"https://policies.google.com/privacy\">Google privacy policy</a>でご確認下さい。"))
+	  "本アプリの開発元は個人情報を収集しません。ただし、サードパーティの広告サービス（Google AdMob™）を利用しており、そのサービスが個人情報を収集することがあります。そのプライバシポリシーにつきましては、<a href='https://policies.google.com/privacy'>Google privacy policy</a>でご確認下さい。"))
      ((en "Additional permissions"
 	  "This application accesses your geo-location information, only if you permit. That data is stored at your device only, and never provided to any other applications or services.
 Internet is used to display advertisement banners.")
@@ -172,7 +176,7 @@ Internet is used to display advertisement banners.")
       (ja "利用にあたっての同意"
 	  "本プライバシポリシー及びサードパーティのプライバシポリシーに同意の上でご利用下さい。もし、同意いただけない場合は本アプリをアンインストールして下さい。"))
      ((en "Contact Us"
-	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>")
+	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>")
       (ja "お問い合わせ"
-	  "プライバシポリシーにつきましてご質問がある場合は<a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>にお問い合わせ下さい。")))))
+	  "プライバシポリシーにつきましてご質問がある場合は<a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>にお問い合わせ下さい。")))))
     

@@ -15,12 +15,16 @@
     (author-email "withlet11@gmail.com")
     (filename "skyclocklite")
     (logo-path "withlet11_full_logo.png")
-    (figure-path "skyclocklite_view.png")
+    (preview-image "skyclocklite_view.png" "144" "312")
+    (screenshots ("skyclocklite_view.png" "144" "312")
+                 ("skyclocklite_screenshot02.png" "144" "312")
+                 ("skyclocklite_screenshot03.png" "144" "312"))
+    (badge "<a href='https://play.google.com/store/apps/details?id=io.github.withlet11.skyclocklite&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a>")
     (introduction
      (en
-      "This is a clock app widget with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres.")
+      "This is a clock app widget with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres. This app has no ads, but you cannot choose the date and time of observation.")
      (ja
-      "これはAndroid用の星座早見盤付き時計ウィジェットです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。"))
+      "Android用の星座早見盤付き時計ウィジェットです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。広告はありませんが、空の表示は現在の時刻に限定されています。"))
     (requirement
      ((en "Requirement")
       (ja "システム要件"))
@@ -80,7 +84,7 @@
      ((en "Update History")
       (ja "更新履歴"))
      ("1 (1.0)"
-      ,(moment 2020 12 28 21 00 #:tz "Europe/Budapest")
+      ,(moment 2020 12 28 22 54 #:tz "Europe/Budapest")
       ((en "This is the first release.")
        (ja "最初のリリースです。"))))
     (privacy-policy
@@ -106,7 +110,7 @@
       (ja "利用にあたっての同意"
 	  "本プライバシポリシー及びサードパーティのプライバシポリシーに同意の上でご利用下さい。もし、同意いただけない場合は本アプリをアンインストールして下さい。"))
      ((en "Contact Us"
-	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>")
+	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>")
       (ja "お問い合わせ"
-	  "プライバシポリシーにつきましてご質問がある場合は<a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>にお問い合わせ下さい。")))))
+	  "プライバシポリシーにつきましてご質問がある場合は<a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>にお問い合わせ下さい。")))))
     
