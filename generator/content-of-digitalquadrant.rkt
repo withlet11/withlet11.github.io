@@ -21,7 +21,7 @@
     (badge "<a href='https://play.google.com/store/apps/details?id=io.github.withlet11.digitalquadrant&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a>")
     (introduction
      (en
-      "This is an astronomical quadrant application for measuring the altitude of celestial objects above the horizon. It has 2 modes, cameraless-mode and camera-mode. Don't use camera-mode for measuring the alitude of the Sun. The camera of the phone may be damaged.")
+      "This is an astronomical quadrant application for measuring the altitude of celestial objects above the horizon. It has 2 modes, cameraless-mode and camera-mode. Don't use camera-mode for measuring the altitude of the Sun. The camera of the phone may be damaged.")
      (ja
       "四分儀アプリです。カメラ無しモードとカメラモードがあります。カメラモードは太陽の高度測定には利用しないで下さい。カメラが壊れる恐れが有ります。"))
     (requirement
@@ -38,11 +38,11 @@
      ((en "Features")
       (ja "特徴"))
      ((en "Camera-mode"
-          "You can use a camera of the phone for measuring the alitutude of Bright stars and the Moon.")
+          "You can use a camera of the phone for measuring the altitude of Bright stars and the Moon.")
       (ja "カメラモード"
           "明るい恒星や月の高度の測定に端末のカメラを利用することができます。"))
      ((en "Auto-hold mode"
-          "If auto-hold mode is turned on, mesuaring is stop automatically when the device isn't move physically.")
+          "If auto-hold mode is turned on, measuring is stop automatically when the device isn't move physically.")
       (ja "オートホールドモード"
           "オートホールドモードがオンになっている場合、端末の向きが変わらない時に測定が自動的に止まります。")))
     (usage
