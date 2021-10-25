@@ -119,6 +119,10 @@
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("10 (5.1)"
+      ,(moment 2021 05 15 15 31 #:tz "Europe/Budapest")
+      ((en "Modified the appearance of the location setting dialog. Updated library versions.")
+       (ja "観測地設定ダイアログの見た目を変更しました。ライブラリのバージョンを更新しました。")))
      ("9 (5.0)"
       ,(moment 2020 12 28 22 00 #:tz "Europe/Budapest")
       ((en "Added the Milky Way and the Moon.")

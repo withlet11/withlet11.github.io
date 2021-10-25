@@ -64,6 +64,10 @@
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("2 (1.1)"
+      ,(moment 2021 05 29 18 20 #:tz "Europe/Budapest")
+      ((en "Updated library versions.")
+       (ja "ライブラリのバージョンを更新しました。")))
      ("1 (1.0)"
       ,(moment 2021 01 04 22 13 #:tz "Europe/Budapest")
       ((en "This is the first release.")

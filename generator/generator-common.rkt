@@ -52,8 +52,8 @@
 	  [else (cadar delimiters)])))
 
 (define (get-local-date-time-string lang date-time)
-  (cond [(eqv? lang 'ja) (string-append (~t date-time "y年M月d日 h時mm分") " (CET)")]
-	[else (string-append (~t date-time "d MMM y h:mm") " (CET)")]))
+  (cond [(eqv? lang 'ja) (string-append (~t date-time "y年M月d日 H時mm分") " (CET)")]
+	[else (string-append (~t date-time "d MMM y H:mm") " (CET)")]))
 
 (define (get-last-update-string lang date-time)
   (cond [(eqv? lang 'ja) (string-append "最終更新：" (~t date-time "y年M月d日"))]
