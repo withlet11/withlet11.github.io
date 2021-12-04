@@ -119,6 +119,10 @@
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("11 (6.0)"
+      ,(moment 2021 11 01 14 52 #:tz "Europe/Budapest")
+      ((en "Added a dialog for setting the background color.")
+       (ja "背景色変更のダイアログを追加しました。")))
      ("10 (5.1)"
       ,(moment 2021 05 15 15 31 #:tz "Europe/Budapest")
       ((en "Modified the appearance of the location setting dialog. Updated library versions.")
