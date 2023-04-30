@@ -4,7 +4,7 @@
 ;;
 ;; The MIT License (MIT)
 ;;
-;; Copyright (c) 2021 Yasuhiro Yamakawa <withlet11@gmail.com>
+;; Copyright (c) 2021-2023 Yasuhiro Yamakawa <withlet11@gmail.com>
 ;; 
 ;; Permission is hereby granted, free of charge, to any person obtaining a
 ;; copy of this software and associated documentation files (the "Software"),
@@ -72,7 +72,7 @@
 	[author-email (second (assv 'author-email content-data))])
     (string-append
      "    <footer>\n"
-     (format "      <p>Copyright 2020-2021 ~a &lt;<a href='mailto:~a'>~a</a>&gt;</p>\n"
+     (format "      <p>Copyright 2020-2023 ~a &lt;<a href='mailto:~a'>~a</a>&gt;</p>\n"
              author-name
              author-email
              author-email)
@@ -139,7 +139,7 @@
                  [badge (second (assv 'badge params))])
              `(,(format "      <article><a class='box-link' href='~a'>\n"
                         filename)
-               ,(format "        <div class='col'><img src='~a' width='~a' height='~a' alt='skyclock view'></div>\n"
+               ,(format "        <div class='col'><img src='~a' width='~a' height='~a' alt='clockwithplanisphere view'></div>\n"
                         (first preview-image)
                         (second preview-image)
                         (third preview-image))

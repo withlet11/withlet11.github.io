@@ -2,29 +2,29 @@
 
 (require gregor)
 
-(provide skyclocklite-data)
+(provide clockwithplanispherelite-data)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Data and Generator for pages about Sky Clock lite          ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Data and Generator for pages about Clock with Planisphere lite ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(define skyclocklite-data
-  `((page-title "Sky Clock lite")
-    (subtitle "Sky Clock lite")
+(define clockwithplanispherelite-data
+  `((page-title "Clock with Planisphere lite")
+    (subtitle "Clock with Planisphere lite")
     (author-name "Yasuhiro Yamakawa")
     (author-email "withlet11@gmail.com")
-    (filename "skyclocklite")
+    (filename "clockwithplanispherelite")
     (logo-path "withlet11_full_logo.png")
-    (preview-image "skyclocklite_view.png" "144" "312")
-    (screenshots ("skyclocklite_view.png" "144" "312")
-                 ("skyclocklite_screenshot02.png" "144" "312")
-                 ("skyclocklite_screenshot03.png" "144" "312"))
-    (badge "<a href='https://play.google.com/store/apps/details?id=io.github.withlet11.skyclocklite&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a>")
+    (preview-image "clockwithplanispherelite_view.png" "144" "312")
+    (screenshots ("clockwithplanispherelite_view.png" "144" "312")
+                 ("clockwithplanispherelite_screenshot02.png" "144" "312")
+                 ("clockwithplanispherelite_screenshot03.png" "144" "312"))
+    (badge "<a href='https://play.google.com/store/apps/details?id=io.github.withlet11.clockwithplanispherelite&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a>")
     (introduction
      (en
-      "This is a clock app widget with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres. This app has no ads, but you cannot choose the date and time of observation.")
+      "This is a clock app widget with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres. This app has no ads, but you cannot choose the date and time of observation. The application name was changed in April, 2023.")
      (ja
-      "Android用の星座早見盤付き時計ウィジェットです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。広告はありませんが、空の表示は現在の時刻に限定されています。"))
+      "Android用の星座早見盤付き時計ウィジェットです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。広告はありませんが、空の表示は現在の時刻に限定されています。2023年4月にアプリ名を変更しました。"))
     (requirement
      ((en "Requirement")
       (ja "システム要件"))
@@ -77,12 +77,16 @@
      ((en "Usage")
       (ja "使い方"))
      ((en "App widget and configure"
-	  "Please put an app widget of Sky Clock lite at the home screen. Tap an app widget or an icon of Sky Clock lite to show a screen for the configuration. App widgets are not updated soon after changes of settings. The clock is update every 10 seconds and the planispher is updated every minute.")
+	  "Please put an app widget of Clock with Planisphere lite at the home screen. Tap an app widget or an icon of Clock with Planisphere lite to show a screen for the configuration. App widgets are not updated soon after changes of settings. The clock is update every 10 seconds and the planispher is updated every minute.")
       (ja "ウィジェットと設定"
-	  "Sky Clock liteのウィジェットをホーム画面に置いて下さい。ウィジェットもしくはアイコンをタップすると、設定画面が表示されます。ウィジェットの更新は時計が10秒ごと、星座早見盤が1分ごとに行われるため、設定がウィジェットに反映されるまでに時間がかかります。")))
+	  "Clock with Planisphere liteのウィジェットをホーム画面に置いて下さい。ウィジェットもしくはアイコンをタップすると、設定画面が表示されます。ウィジェットの更新は時計が10秒ごと、星座早見盤が1分ごとに行われるため、設定がウィジェットに反映されるまでに時間がかかります。")))
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("3 (1.2)"
+      ,(moment 2023 04 30 08 00 #:tz "Europe/Budapest")
+      ((en "The application name was changed to avoid potential trademark litigation. The library version was update.")
+       (ja "潜在的な商標訴訟を避けるために、アプリケーション名を変更しました。ライブラリーのバージョンを更新しました。")))
      ("2 (1.1)"
       ,(moment 2021 05 15 16 43 #:tz "Europe/Budapest")
       ((en "Updated library versions.")

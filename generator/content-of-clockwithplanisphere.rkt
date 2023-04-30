@@ -2,29 +2,29 @@
 
 (require gregor)
 
-(provide skyclock-data)
+(provide clockwithplanisphere-data)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Data and Generator for pages about Sky Clock               ;;
+;; Data and Generator for pages about Clock with Planisphere  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(define skyclock-data
-  `((page-title "Sky Clock")
-    (subtitle "Sky Clock")
+(define clockwithplanisphere-data
+  `((page-title "Clock with Planisphere")
+    (subtitle "Clock with Planisphere")
     (author-name "Yasuhiro Yamakawa")
     (author-email "withlet11@gmail.com")
-    (filename "skyclock")
+    (filename "clockwithplanisphere")
     (logo-path "withlet11_full_logo.png")
-    (preview-image "skyclock_view.png" "312" "312")
-    (screenshots ("skyclock_screenshot01.png" "144" "312")
-                 ("skyclock_screenshot03.png" "144" "312")
-                 ("skyclock_screenshot04.png" "144" "312"))
-    (badge "<a href='https://play.google.com/store/apps/details?id=io.github.withlet11.skyclock&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a>")
+    (preview-image "clockwithplanisphere_view.png" "312" "312")
+    (screenshots ("clockwithplanisphere_screenshot01.png" "144" "312")
+                 ("clockwithplanisphere_screenshot03.png" "144" "312")
+                 ("clockwithplanisphere_screenshot04.png" "144" "312"))
+    (badge "<a href='https://play.google.com/store/apps/details?id=io.github.withlet11.clockwithplanisphere&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width='160'/></a>")
     (introduction
      (en
-      "This is a clock application with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres.")
+      "This is a clock application with a planisphere for Android. The planisphere shows the current sky at the observation location by setting the latitude and the longitude. You can switch the northern and southern celestial hemispheres. The application name was changed in April 2023.")
      (ja
-      "Android用の星座早見盤付き時計アプリです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。"))
+      "Android用の星座早見盤付き時計アプリです。星座早見盤は緯度と経度を設定することで、現在地における現在の空を表示します。北天と南天を切り替えることができます。2023年4月にアプリ名を変更しました。"))
     (requirement
      ((en "Requirement")
       (ja "システム要件"))
@@ -119,6 +119,10 @@
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("12 (6.1)"
+      ,(moment 2023 04 30 08 00 #:tz "Europe/Budapest")
+      ((en "The application name was changed to avoid potential trademark litigation. The library version was update.")
+       (ja "潜在的な商標訴訟を避けるために、アプリケーション名を変更しました。ライブラリーのバージョンを更新しました。")))
      ("11 (6.0)"
       ,(moment 2021 11 01 14 52 #:tz "Europe/Budapest")
       ((en "Added a dialog for setting the background color.")

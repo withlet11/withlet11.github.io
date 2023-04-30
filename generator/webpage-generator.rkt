@@ -38,14 +38,14 @@
          "html-generator.rkt"
          "readme-generator.rkt"
          "gp-text-generator.rkt"
-	 "content-of-skyclock.rkt"
-	 "content-of-skyclocklite.rkt"
+	 "content-of-clockwithplanisphere.rkt"
+	 "content-of-clockwithplanispherelite.rkt"
 	 "content-of-celestialpositions.rkt"
 	 "content-of-digitalquadrant.rkt"
          "content-of-index.rkt")
 
-(define content-list `(,skyclock-data
-                       ,skyclocklite-data
+(define content-list `(,clockwithplanisphere-data
+                       ,clockwithplanispherelite-data
                        ,celestialpositions-data
                        ,digitalquadrant-data))
 
