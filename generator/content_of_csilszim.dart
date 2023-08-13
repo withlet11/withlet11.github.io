@@ -9,9 +9,10 @@ final csilszimData = DescriptionsOfApplication(
   authorEmail: withlet11GmailCom,
   filename: 'csilszim',
   logoPath: 'withlet11_full_logo.png',
-  previewImage: Image('csilszim_view.jpg', 144, 312),
+  previewImage: Image('csilszim_view.png', 144, 312),
   screenshots: [
     Image('csilszim_screenshot01.png', 144, 312),
+    Image('csilszim_screenshot02.png', 144, 312),
     Image('csilszim_screenshot03.png', 144, 312),
     Image('csilszim_screenshot04.png', 144, 312),
   ],
