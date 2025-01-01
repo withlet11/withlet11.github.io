@@ -119,6 +119,10 @@
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("13 (6.2)"
+      ,(moment 2024 08 28 08 29 #:tz "Europe/Budapest")
+      ((en "The library version was updated.")
+       (ja "ライブラリーのバージョンを更新しました。")))
      ("12 (6.1)"
       ,(moment 2023 04 30 08 00 #:tz "Europe/Budapest")
       ((en "The application name was changed to avoid potential trademark litigation. The library version was update.")
@@ -188,7 +192,7 @@ Internet is used to display advertisement banners.")
       (ja "利用にあたっての同意"
 	  "本プライバシポリシー及びサードパーティのプライバシポリシーに同意の上でご利用下さい。もし、同意いただけない場合は本アプリをアンインストールして下さい。"))
      ((en "Contact Us"
-	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>")
+	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>")
       (ja "お問い合わせ"
-	  "プライバシポリシーにつきましてご質問がある場合は<a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>にお問い合わせ下さい。")))))
+	  "プライバシポリシーにつきましてご質問がある場合は<a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>にお問い合わせ下さい。")))))
     

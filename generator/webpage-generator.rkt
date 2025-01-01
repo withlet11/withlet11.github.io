@@ -38,13 +38,15 @@
          "html-generator.rkt"
          "readme-generator.rkt"
          "gp-text-generator.rkt"
+	 "content-of-csilszim.rkt"
 	 "content-of-clockwithplanisphere.rkt"
 	 "content-of-clockwithplanispherelite.rkt"
 	 "content-of-celestialpositions.rkt"
 	 "content-of-digitalquadrant.rkt"
          "content-of-index.rkt")
 
-(define content-list `(,clockwithplanisphere-data
+(define content-list `(,csilszim-data
+		       ,clockwithplanisphere-data
                        ,clockwithplanispherelite-data
                        ,celestialpositions-data
                        ,digitalquadrant-data))

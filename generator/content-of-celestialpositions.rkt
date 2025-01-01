@@ -38,7 +38,7 @@
     (features
      ((en "Features")
       (ja "特徴"))
-     ((en "All Messier' objects and bright stars"
+     ((en "All Messier's objects and bright stars"
 	  "The celestial positions of all Messier's objects and bright stars are calculated every second to display the list of them.")
       (ja "全てのメシエ天体と明るい恒星"
 	  "全てのメシエ天体と明るい恒星の天球上の位置をリアルタイムに表示します。"))
@@ -64,6 +64,14 @@
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("4 (1.3)"
+      ,(moment 2024 08 23 11 05 #:tz "Europe/Budapest")
+      ((en "The library version was updated.")
+       (ja "ライブラリのバージョンを更新しました。")))
+     ("3 (1.2)"
+      ,(moment 2023 08 19 15 48 #:tz "Europe/Budapest")
+      ((en "The library version was updated.")
+       (ja "ライブラリのバージョンを更新しました。")))
      ("2 (1.1)"
       ,(moment 2021 05 29 18 20 #:tz "Europe/Budapest")
       ((en "Updated library versions.")
@@ -95,7 +103,7 @@
       (ja "利用にあたっての同意"
 	  "本プライバシポリシー及びサードパーティのプライバシポリシーに同意の上でご利用下さい。もし、同意いただけない場合は本アプリをアンインストールして下さい。"))
      ((en "Contact Us"
-	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>")
+	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>")
       (ja "お問い合わせ"
-	  "プライバシポリシーにつきましてご質問がある場合は<a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>にお問い合わせ下さい。")))))
+	  "プライバシポリシーにつきましてご質問がある場合は<a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>にお問い合わせ下さい。")))))
     

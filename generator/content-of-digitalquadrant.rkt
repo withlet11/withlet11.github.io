@@ -27,8 +27,8 @@
     (requirement
      ((en "Requirement")
       (ja "システム要件"))
-     ((en "API 22 (Android 5.1) or later")
-      (ja "API 22 (Android 5.1) もしくは、それ以降。")))
+     ((en "API 26 (Android 8) or later")
+      (ja "API 26 (Android 8) もしくは、それ以降。")))
     (license
      ((en "License")
       (ja "使用許諾"))
@@ -55,6 +55,14 @@
     (update-history
      ((en "Update History")
       (ja "更新履歴"))
+     ("4 (1.3)"
+      ,(moment 2024 08 22 22 19 #:tz "Europe/Budapest")
+      ((en "The library version was update.")
+       (ja "ライブラリのバージョンを更新しました。")))
+     ("2 (1.1)"
+      ,(moment 2021 05 29 16 23 #:tz "Europe/Budapest")
+      ((en "Updated library versions.")
+       (ja "ライブラリのバージョンを更新しました。")))
      ("2 (1.1)"
       ,(moment 2021 05 29 16 23 #:tz "Europe/Budapest")
       ((en "Updated library versions.")
@@ -86,7 +94,7 @@
       (ja "利用にあたっての同意"
 	  "本プライバシポリシー及びサードパーティのプライバシポリシーに同意の上でご利用下さい。もし、同意いただけない場合は本アプリをアンインストールして下さい。"))
      ((en "Contact Us"
-	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>")
+	  "If there are any questions regarding this Privacy Policy you may contact us by email: <a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>")
       (ja "お問い合わせ"
-	  "プライバシポリシーにつきましてご質問がある場合は<a href='mailto:withlet11@gmail.com'>withlet11@gmail.com</a>にお問い合わせ下さい。")))))
+	  "プライバシポリシーにつきましてご質問がある場合は<a href=\"mailto:withlet11@gmail.com\">withlet11@gmail.com</a>にお問い合わせ下さい。")))))
     
